@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    // Declare variables
+    int n;
+    double sum = 0.0;
+
+    // Take input for the number of terms
+    printf("Enter the number of terms (n): ");
+    scanf("%d", &n);
+
+    // Compute the sum of the series
+    for (int i = 1; i <= n; ++i) {
+        sum += 1.0 / i;
+    }
+
+    // Display the sum
+    printf("Sum of the series: %.4f\n", sum);
+
+    return 0;
+}
