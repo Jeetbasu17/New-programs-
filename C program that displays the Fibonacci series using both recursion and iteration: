@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+// Function to generate Fibonacci series using recursion
+int fibonacciRecursion(int n) {
+    if (n <= 1) {
+        return n;
+    } else {
+        return fibonacciRecursion(n - 1) + fibonacciRecursion(n - 2);
+    }
+}
+
+// Function to generate Fibonacci series using iteration
+void fibonacciIteration(int n) {
+    int first = 0, second = 1, next;
+
+    printf("Fibonacci series using iteration: ");
+
+    for (int i = 0; i < n; ++i) {
+        printf("%d ", first);
+        next = first + second;
+        first = second;
+        second = next;
+    }
+
+    printf("\n");
+}
+
+int main() {
+    // Declare variables
+    int terms;
+
+    // Take input from the user
+    printf("Enter the number of terms in the Fibonacci series: ");
+    scanf("%d", &terms);
+
+    // Display Fibonacci series using recursion
+    printf("Fibonacci series using recursion: ");
+    for (int i = 0; i < terms; ++i) {
+        printf("%d ", fibonacciRecursion(i));
+    }
+    printf("\n");
+
+    // Display Fibonacci series using iteration
+    fibonacciIteration(terms);
+
+    return 0;
+}
