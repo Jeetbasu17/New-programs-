@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+// Function to compute and print factors of a number
+void printFactors(int num) {
+    printf("Factors of %d are: ", num);
+    for (int i = 1; i <= num; ++i) {
+        if (num % i == 0) {
+            printf("%d ", i);
+        }
+    }
+    printf("\n");
+}
+
+int main() {
+    // Declare variables
+    int number;
+
+    // Take input from the user
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    // Check and print factors of the entered number
+    printFactors(number);
+
+    return 0;
+}
