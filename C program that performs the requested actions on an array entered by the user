@@ -1,0 +1,59 @@
+#include <stdio.h>
+
+// Function to calculate sum and average of array elements
+void calculateSumAndAverage(int arr[], int size, int *sum, float *average) {
+    *sum = 0;
+    for (int i = 0; i < size; ++i) {
+        *sum += arr[i];
+    }
+    *average = (float)*sum / size;
+}
+
+// Function to find maximum and minimum elements in array
+void findMaxAndMin(int arr[], int size, int *max, int *min) {
+    *max = *min = arr[0];
+    for (int i = 1; i < size; ++i) {
+        if (arr[i] > *max) {
+            *max = arr[i];
+        }
+        if (arr[i] < *min) {
+            *min = arr[i];
+        }
+    }
+}
+
+int main() {
+    // Declare variables
+    int size, sum, max, min;
+    float average;
+
+    // Take input for the size of the array
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+
+    // Declare an array of the specified size
+    int array[size];
+
+    // Take input for the array elements
+    printf("Enter the array elements:\n");
+    for (int i = 0; i < size; ++i) {
+        printf("Element %d: ", i + 1);
+        scanf("%d", &array[i]);
+    }
+
+    // Call function to calculate sum and average
+    calculateSumAndAverage(array, size, &sum, &average);
+
+    // Print sum and average
+    printf("Sum of array elements: %d\n", sum);
+    printf("Average of array elements: %.2f\n", average);
+
+    // Call function to find maximum and minimum
+    findMaxAndMin(array, size, &max, &min);
+
+    // Print maximum and minimum
+    printf("Maximum element: %d\n", max);
+    printf("Minimum element: %d\n", min);
+
+    return 0;
+}
