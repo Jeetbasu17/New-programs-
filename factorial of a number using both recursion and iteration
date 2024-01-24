@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+// Function to calculate factorial using recursion
+unsigned long long factorialRecursion(int n) {
+    if (n == 0 || n == 1) {
+        return 1;
+    } else {
+        return n * factorialRecursion(n - 1);
+    }
+}
+
+// Function to calculate factorial using iteration
+unsigned long long factorialIteration(int n) {
+    unsigned long long result = 1;
+
+    for (int i = 2; i <= n; ++i) {
+        result *= i;
+    }
+
+    return result;
+}
+
+int main() {
+    // Declare variables
+    int number;
+
+    // Take input from the user
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    // Calculate and display factorial using recursion
+    printf("Factorial using recursion: %llu\n", factorialRecursion(number));
+
+    // Calculate and display factorial using iteration
+    printf("Factorial using iteration: %llu\n", factorialIteration(number));
+
+    return 0;
+}
