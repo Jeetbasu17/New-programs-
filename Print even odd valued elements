@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+// Function to print even-valued elements in an array
+void printEvenElements(int arr[], int size) {
+    printf("Even-valued elements: ");
+    for (int i = 0; i < size; ++i) {
+        if (arr[i] % 2 == 0) {
+            printf("%d ", arr[i]);
+        }
+    }
+    printf("\n");
+}
+
+// Function to print odd-valued elements in an array
+void printOddElements(int arr[], int size) {
+    printf("Odd-valued elements: ");
+    for (int i = 0; i < size; ++i) {
+        if (arr[i] % 2 != 0) {
+            printf("%d ", arr[i]);
+        }
+    }
+    printf("\n");
+}
+
+int main() {
+    // Declare variables
+    int size;
+
+    // Take input for the size of the array
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+
+    // Declare an array of the specified size
+    int array[size];
+
+    // Take input for the array elements
+    printf("Enter the array elements:\n");
+    for (int i = 0; i < size; ++i) {
+        printf("Element %d: ", i + 1);
+        scanf("%d", &array[i]);
+    }
+
+    // Call functions to print even and odd elements
+    printEvenElements(array, size);
+    printOddElements(array, size);
+
+    return 0;
+}
