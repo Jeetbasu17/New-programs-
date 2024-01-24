@@ -1,0 +1,69 @@
+#include <stdio.h>
+
+// Function to remove duplicates from the array
+int removeDuplicates(int arr[], int size) {
+    int uniqueIndex = 0;
+
+    // Check each element for duplicates
+    for (int i = 0; i < size; ++i) {
+        int isDuplicate = 0;
+
+        // Check if the element has occurred before
+        for (int j = 0; j < uniqueIndex; ++j) {
+            if (arr[i] == arr[j]) {
+                isDuplicate = 1;
+                break;
+            }
+        }
+
+        // If not a duplicate, add to the unique elements
+        if (!isDuplicate) {
+            arr[uniqueIndex++] = arr[i];
+        }
+    }
+
+    return uniqueIndex;
+}
+
+// Function to print the array in reverse order
+void printReverse(int arr[], int size) {
+    printf("Array in reverse order: ");
+    for (int i = size - 1; i >= 0; --i) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+    // Declare variables
+    int size;
+
+    // Take input for the size of the array
+    printf("Enter the size of the array: ");
+    scanf("%d", &size);
+
+    // Declare an array of the specified size
+    int array[size];
+
+    // Take input for the array elements
+    printf("Enter the array elements:\n");
+    for (int i = 0; i < size; ++i) {
+        printf("Element %d: ", i + 1);
+        scanf("%d", &array[i]);
+    }
+
+    // Call function to remove duplicates
+    int uniqueSize = removeDuplicates(array, size);
+
+    // Print array after removing duplicates
+    printf("Array after removing duplicates: ");
+    for (int i = 0; i < uniqueSize; ++i) {
+        printf("%d ", array[i]);
+    }
+    printf("\n");
+
+    // Call function to print array in reverse order
+    printReverse(array, uniqueSize);
+
+    return 0;
+}
