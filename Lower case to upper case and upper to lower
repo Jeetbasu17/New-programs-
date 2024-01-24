@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+
+// Function to convert all lowercase characters to uppercase
+void convertToLowercase(char str[]) {
+    for (int i = 0; i < strlen(str); ++i) {
+        str[i] = tolower(str[i]);
+    }
+}
+
+// Function to convert all uppercase characters to lowercase
+void convertToUppercase(char str[]) {
+    for (int i = 0; i < strlen(str); ++i) {
+        str[i] = toupper(str[i]);
+    }
+}
+
+int main() {
+    // Declare variables
+    char inputString[100];
+
+    // Take input from the user
+    printf("Enter a string: ");
+    fgets(inputString, sizeof(inputString), stdin);
+
+    // Remove newline character if present
+    inputString[strcspn(inputString, "\n")] = '\0';
+
+    // Call function to convert lowercase to uppercase
+    convertToUppercase(inputString);
+    printf("Uppercase: %s\n", inputString);
+
+    // Call function to convert uppercase to lowercase
+    convertToLowercase(inputString);
+    printf("Lowercase: %s\n", inputString);
+
+    return 0;
+}
