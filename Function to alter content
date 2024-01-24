@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+// Function to alter contents at given addresses
+void alterContents(int *ptr1, int *ptr2) {
+    // Alter contents
+    *ptr1 += 10;
+    *ptr2 *= 2;
+}
+
+int main() {
+    // Declare variables
+    int num1 = 5, num2 = 8;
+
+    // Display initial values
+    printf("Initial values: num1 = %d, num2 = %d\n", num1, num2);
+
+    // Call function to alter contents
+    alterContents(&num1, &num2);
+
+    // Display modified values
+    printf("Modified values: num1 = %d, num2 = %d\n", num1, num2);
+
+    return 0;
+}
